@@ -1,44 +1,45 @@
 ---
-title: "Multi-Tenant Enterprise SaaS Management Platform"
+title: "TSTech.id: Multi-Tenant Enterprise SaaS Management Platform"
 publishedAt: "2024-04-12"
-summary: "Infrastruktur platform SaaS multi-tenant dengan isolasi data terjamin, sistem subscription berjenjang, role-based access control (RBAC), dan visualisasi analytics performa bisnis."
+summary: "Infrastruktur platform SaaS multi-tenant dengan isolasi data terjamin, sistem subscription berjenjang, role-based access control (RBAC), monitoring & order custom proyek, serta visualisasi analytics performa bisnis."
 images:
-  - "/images/projects/project-01/cover-04.jpg"
-  - "/images/projects/project-01/image-03.jpg"
+  - "/images/projects/tstech/image1.png"
+  - "/images/projects/tstech/image2.png"
+  - "/images/projects/tstech/image3.png"
 team:
   - name: "Muhammad Ahsani Taqwim"
     role: "Backend & Cloud Engineer"
     avatar: "/images/avatar-taqwim.jpg"
     linkedIn: "https://www.linkedin.com/in/mahsanitaqwim/"
-link: "https://github.com/taqwims"
+link: "https://www.tstech.id/"
 ---
 
 ## Overview
 
 **Multi-Tenant Enterprise SaaS Platform** adalah solusi arsitektur perangkat lunak berbasis langganan (*Software-as-a-Service*) skala enterprise yang dirancang untuk melayani ribuan organisasi bisnis dalam satu infrastruktur terpusat yang aman, terisolasi, dan berkinerja tinggi.
 
-Platform ini menyediakan sistem manajemen tenant modular yang menangani otomatisasi *onboarding*, konfigurasi domain kustom (*white-label*), penagihan langganan otomatis (*automated subscription billing*), dan monitoring analitik penggunaan fitur secara *real-time*.
+Platform ini menyediakan sistem manajemen tenant modular yang menangani otomatisasi *onboarding*, pemesanan/order custom proyek, alur monitoring pengerjaan proyek secara transparan, konfigurasi domain kustom (*white-label*), penagihan langganan otomatis (*automated subscription billing*), dan pemantauan analitik penggunaan fitur secara *real-time*.
 
 ## Key Features
 
 - **Multi-Tenant Architecture dengan Data Isolation**: Strategi isolasi data tingkat lanjut (schema-based / row-level security) yang menjamin keamanan data dan privasi setiap entitas bisnis (tenant).
+- **Custom Project Ordering & Progress Monitoring**: Modul alur pemesanan proyek kustom yang memungkinkan klien mengajukan spesifikasi kebutuhan, menyetujui penawaran, serta memantau status pengerjaan proyek secara real-time dan transparan.
 - **Flexible Subscription & Billing Engine**: Integrasi gateway pembayaran dengan dukungan paket bulanan/tahunan, kupon promo, upgrade/downgrade instan, dan faktur pajak otomatis.
 - **Granular Role-Based Access Control (RBAC)**: Pengaturan izin akses mendalam untuk Owner, Admin, Manager, dan Staff dengan custom permission matrix.
-- **Real-Time Analytics & Audit Logs**: Pemantauan metrik penggunaan API, aktivitas pengguna, riwayat perubahan data, dan performa throughput aplikasi.
+- **Real-Time Analytics & Audit Logs**: Pemantauan metrik penggunaan API, aktivitas pengguna, riwayat perubahan data, serta performa throughput aplikasi dan proyek.
 - **Scalable Webhook & REST API**: Fasilitas integrasi eksternal bagi klien enterprise untuk menyinkronkan data dengan sistem internal mereka.
 
 ## Technologies Used
 
 - **Next.js & TypeScript**: Dashboard web berkinerja tinggi dengan server components dan state management optimal.
-- **Node.js / Express & Python Microservices**: Backend service modular untuk komputasi analitik dan pemrosesan antrian batch.
 - **PostgreSQL & Redis**: Database relasional dengan skema multi-tenant terisolasi dan in-memory caching untuk respons sub-millisecond.
 - **Docker & CI/CD Pipelines**: Otomatisasi pengujian dan deployment kontainer pada cloud infrastructure berstandar tinggi.
-- **Stripe / Midtrans Integration**: Integrasi payment gateway multikanal dengan webhook otomatis.
+- **Midtrans / Mayar.id Integration**: Integrasi payment gateway multikanal dengan webhook otomatis.
 
 ## Challenges and Learnings
 
-Tantangan arsitektur terbesar adalah mencegah *noisy neighbor problem* di mana salah satu tenant menggunakan beban komputasi berlebihan yang berpotensi memperlambat tenant lainnya. Masalah ini diatasi dengan implementasi *rate limiting* berbasis token bucket per-tenant pada Redis dan pemisahan antrian *background jobs* menggunakan BullMQ.
+Tantangan arsitektur terbesar adalah mencegah *noisy neighbor problem* di mana salah satu tenant menggunakan beban komputasi berlebihan yang berpotensi memperlambat tenant lainnya, serta mengelola alur status proyek custom yang kompleks agar tetap tersinkronisasi secara real-time. Masalah ini diatasi dengan implementasi *rate limiting* berbasis token bucket per-tenant pada Redis dan pemisahan antrian *background jobs* menggunakan BullMQ.
 
 ## Outcome
 
-Platform berhasil melayani puluhan tenant bisnis secara stabil dengan uptime 99.9%, memproses ribuan transaksi berkala secara otomatis tanpa adanya kendala isolasi data antar organisasi.
+Platform berhasil melayani puluhan tenant bisnis secara stabil dengan uptime 99.9%, memfasilitasi pemesanan dan monitoring proyek custom secara terstruktur, serta memproses ribuan transaksi berkala secara otomatis tanpa adanya kendala isolasi data antar organisasi.

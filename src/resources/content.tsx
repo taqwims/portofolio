@@ -5,9 +5,9 @@ const person: Person = {
   firstName: "Muhammad Ahsani",
   lastName: "Taqwim",
   name: `Muhammad Ahsani Taqwim`,
-  role: "Software Engineer",
+  role: "Fullstack Developer",
   avatar: "/images/avatar-taqwim.jpg",
-  email: "hello@taqwims.com",
+  email: "05taqwim@gmail.com",
   location: "Bandung",
   languages: ["Bahasa Indonesia", "English"], // optional: Leave the array empty if you don't want to display languages
   locale: "id", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
@@ -105,12 +105,15 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Software & Technology Solutions",
-        timeframe: "2023 - Sekarang",
-        role: "Software Engineer",
+        company: "PT Ana Nahnu Indonesia",
+        timeframe: "2026",
+        role: "Fullstack Developer",
         achievements: [
           <>
-            Mengembangkan dan mengoptimalkan aplikasi mobile Android serta platform web responsif berkinerja tinggi.
+            Mengembangkan dan mengoptimalkan Manajemen Workflow Perusahaan berbasis Web.
+          </>,
+          <>
+            Membuat Dashboard untuk monitoring dan analitik performa perusahaan.
           </>,
           <>
             Mengintegrasikan model AI, Computer Vision, dan NLP ke dalam backend service untuk otomatisasi pengolahan dokumen dan data.
@@ -122,15 +125,18 @@ const about: About = {
         images: [],
       },
       {
-        company: "Digital Studio Labs",
-        timeframe: "2021 - 2023",
-        role: "Fullstack & Mobile Developer",
+        company: "SDIT An-Nur Banjarsari",
+        timeframe: "2026",
+        role: "Fullstack Developer",
         achievements: [
           <>
-            Membangun aplikasi Android native dan web modern berbasis Next.js / React untuk beragam klien industri.
+            Membuat Sistem Informasi Manajemen Keuangan Sekolah berbasis Web untuk mendukung proses administrasi sekolah dan tagihan siswa.
           </>,
           <>
-            Mengonfigurasi server VPS, automated build, dan integrasi RESTful API dengan standar keamanan dan keandalan tinggi.
+            Membuat Sistem Informasi Manajemen Akademik Sekolah berbasis Web untuk mendukung proses administrasi sekolah.
+          </>,
+          <>
+            Membuat Sistem Informasi Sekolah berbasis Web untuk mendukung kegiatan siswa.
           </>,
         ],
         images: [],
@@ -143,7 +149,7 @@ const about: About = {
     institutions: [
       {
         name: "Teknik Informatika / Computer Science",
-        description: <>Fokus pada Rekayasa Perangkat Lunak, Algoritma, Kecerdasan Buatan, dan Sistem Terdistribusi.</>,
+        description: <>Lulusan Teknik Informatik UIN Sunan Gunung Djati Bandung. Fokus pada Rekayasa Perangkat Lunak, Algoritma, Kecerdasan Buatan, dan Sistem Terdistribusi.</>,
       },
     ],
   },
@@ -165,6 +171,10 @@ const about: About = {
             name: "Kotlin",
             icon: "kotlin",
           },
+          {
+            name: "Flutter",
+            icon: "flutter",
+          }
         ],
         images: [],
       },
@@ -192,7 +202,7 @@ const about: About = {
       {
         title: "Artificial Intelligence & Data",
         description: (
-          <>Implementasi Machine Learning, Natural Language Processing (NLP), Transformer (IndoBERT), dan integrasi LLM.</>
+          <>Implementasi Machine Learning,  Text to Speech (TTS), zero shoot voice cloning (index-tts2),dan integrasi AI.</>
         ),
         tags: [
           {
