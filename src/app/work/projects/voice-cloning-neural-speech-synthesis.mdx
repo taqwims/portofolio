@@ -1,0 +1,44 @@
+---
+title: "Neural Voice Cloning: Sistem Kloning Suara & Sintesis Vokal"
+publishedAt: "2024-08-15"
+summary: "Pengembangan sistem sintesis suara neural yang mampu mereplikasi karakteristik vokal manusia (pitch, timbre, intonasi) hanya dengan sampel audio singkat (Few-Shot Voice Cloning)."
+images:
+  - "/images/projects/project-01/cover-03.jpg"
+  - "/images/projects/project-01/cover-04.jpg"
+team:
+  - name: "Muhammad Ahsani Taqwim"
+    role: "AI & Software Engineer"
+    avatar: "/images/avatar-taqwim.jpg"
+    linkedIn: "https://www.linkedin.com/in/mahsanitaqwim/"
+link: "https://github.com/taqwims"
+---
+
+## Overview
+
+**Neural Voice Cloning** adalah proyek riset dan implementasi kecerdasan buatan dalam bidang *Speech Synthesis* dan *Deep Generative Models*. Sistem ini memungkinkan pembuatan model suara sintetis (kloning vokal) yang terdengar alami dan ekspresif hanya dengan menggunakan sampel suara referensi berdurasi 5 hingga 10 detik (*Few-Shot / Zero-Shot Speaker Adaptation*).
+
+Proyek ini bertujuan mempermudah produksi konten audio naratif, sulih suara (*voice over*), asisten virtual personal, serta alat bantu komunikasi bagi individu dengan gangguan vokal.
+
+## Key Features
+
+- **Few-Shot Speaker Adaptation**: Mengekstrak vektor representasi pembicara (*speaker embeddings*) dari cuplikan audio singkat tanpa perlu proses retraining model yang memakan waktu lama.
+- **Kontrol Prosodi & Emosi**: Menyesuaikan nada bicara (*pitch*), kecepatan tempo, dan intonasi emosional (netral, antusias, tenang, formal).
+- **Neural Vocoder Berlatensi Rendah**: Menghasilkan bentuk gelombang audio (*raw audio waveforms*) berkualitas tinggi mendekati standar rekaman studio menggunakan arsitektur HiFi-GAN / BigVGAN.
+- **Dukungan Multibahasa**: Kemampuan menyintesis teks dalam bahasa Indonesia dan bahasa Inggris dengan tetap mempertahankan karakteristik unik suara penutur asli.
+- **Web Interface & Audio Tester**: Antarmuka interaktif untuk merekam/mengunggah sampel suara, memasukkan teks skrip, dan mendengarkan hasil sintesis secara instan.
+
+## Technologies Used
+
+- **PyTorch & CUDA**: Framework komputasi utama untuk arsitektur deep learning dan akselerasi inferensi GPU.
+- **VITS & FastSpeech2**: Model arsitektur end-to-end Text-to-Speech untuk pemetaan teks ke representasi mel-spektrogram.
+- **HiFi-GAN Vocoder**: Neural vocoder berbasis GAN untuk sintesis audio resolusi tinggi.
+- **FastAPI Backend**: Service RESTful API yang melayani permintaan sintesis audio secara asynchronous.
+- **Next.js & Web Audio API**: Antarmuka visual untuk visualisasi spektrogram dan pemutar audio interaktif.
+
+## Challenges and Learnings
+
+Tantangan tersulit adalah menghilangkan artefak suara robotik dan menjaga kemiripan timbre vokal penutur dengan noise lingkungan yang bervariasi. Pendekatan ekstraksi *speaker embedding* dengan encoder terlatih dan modul denoiser audio menghasilkan kloning suara yang jernih dengan *Mean Opinion Score* (MOS) mendekati suara manusia asli.
+
+## Outcome
+
+Sistem berhasil memangkas waktu pembuatan audio voice-over personal dari hitungan jam rekaman manual menjadi hanya beberapa detik proses komputasi, dengan kemiripan vokal di atas 90% pada pengujian dengar subjektif.

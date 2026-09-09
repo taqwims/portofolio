@@ -1,0 +1,63 @@
+---
+title: "SDIT-Keuangan: Sistem Informasi Sekolah & Manajemen Keuangan Terpadu"
+publishedAt: "2024-05-25"
+summary: "Platform digital terpadu SaaS multi-tenant untuk otomatisasi administrasi akademik, BKU arus kas real-time, auto-billing SPP, integrasi Midtrans QRIS/VA, notifikasi WhatsApp Gateway, dan kuitansi digital HMAC-SHA256 dengan 11 level RBAC."
+images:
+  - "/images/projects/project-01/cover-01.jpg"
+  - "/images/projects/project-01/image-02.jpg"
+team:
+  - name: "Muhammad Ahsani Taqwim"
+    role: "Fullstack Engineer"
+    avatar: "/images/avatar-taqwim.jpg"
+    linkedIn: "https://www.linkedin.com/in/mahsanitaqwim/"
+link: "https://github.com/taqwims"
+---
+
+## Overview
+
+**SDIT-Keuangan (PPI-100 School Information System)** adalah platform digital terpadu berbasis web yang dirancang khusus untuk mengotomasi dan mendigitalisasi tata kelola administrasi akademik, operasional sekolah, dan manajemen keuangan institusi pendidikan Islam (SDIT, MTS, MA di bawah naungan yayasan).
+
+Sistem ini mengadopsi arsitektur **SaaS Multi-Tenant / Multi-Unit**, memungkinkan pengelolaan beberapa unit sekolah secara independen namun tetap berada dalam satu kendali pengawasan terpusat bagi pimpinan yayasan. Fokus utama sistem adalah menciptakan transparansi arus kas, mempermudah wali murid bertransaksi non-tunai (*cashless*), memangkas beban kerja bendahara/tata usaha, serta mengintegrasikan *Payment Gateway* dan notifikasi otomatis WhatsApp.
+
+## Key Features & System Modules
+
+### 1. Modul Keuangan & Pembayaran (*Core Module*)
+- **Manajemen Tagihan & Auto-Billing**: Pengaturan tarif SPP, uang gedung, seragam, dan kegiatan per tingkat kelas / per siswa dengan periode fleksibel (bulanan/tahunan).
+- **Multi-Metode Pembayaran (Midtrans Integration)**: Pembayaran online 24 jam via QRIS (GoPay, ShopeePay, OVO, Dana) dan Virtual Account bank nasional (BCA, Mandiri, BNI, BRI, Permata) dengan konfirmasi status lunas otomatis (*real-time webhook*), didukung pembayaran tunai kasir dan transfer manual.
+- **Kuitansi Digital & HMAC-SHA256 Cryptography**: Bukti pembayaran PDF otomatis berstempel digital dan dilengkapi QR Code bertanda tangan kriptografi **HMAC-SHA256** guna menjamin keaslian bukti bayar dan mencegah pemalsuan.
+- **Buku Kas Umum (BKU Double-Entry)**: Pembukuan arus kas masuk dan keluar secara ganda (*double-entry bookkeeping*), pengelompokan pos akun transaksi, dan rekonsiliasi saldo kas/bank.
+- **Tabungan Siswa & Infaq Harian**: Buku mutasi simpanan siswa (setor/tarik tunai) serta pencatatan penerimaan infaq harian per kelas.
+- **Anggaran Sekolah (RKAS / RAPBS) & Payroll**: Penyusunan anggaran belanja tahunan vs realisasi serapan dana, serta sistem penggajian guru/karyawan lengkap dengan slip gaji digital.
+
+### 2. Modul Akademik, Kesiswaan & PPDB Online
+- **Data Induk Siswa & Rombel**: Pengelolaan biodata NIS/NISN, data wali, mutasi, hingga mekanisme kenaikan kelas massal (*bulk promotion*).
+- **Presensi Terintegrasi (Dual-Mode)**: Pencatatan kehadiran harian menggunakan pemindaian **QR Code dinamis** via smartphone atau input manual wali kelas.
+- **Portal PPDB Online**: Pendaftaran calon santri daring, validasi berkas identitas, dan penagihan biaya formulir serta uang pangkal bertahap.
+
+### 3. Modul Komunikasi WhatsApp Gateway (Fonnte)
+- **Notifikasi Otomatis Multi-Channel**: Pengiriman tagihan baru, pengingat jatuh tempo SPP, konfirmasi bukti bayar sukses, dan notifikasi ketidakhadiran siswa langsung ke nomor WhatsApp orang tua secara *real-time*.
+
+### 4. Hak Akses Berjenjang (11 Level Role RBAC)
+Hak akses terisolasi untuk 11 tingkatan pengguna: *Super Admin, Pimpinan Yayasan, Kepala Sekolah, Bendahara / Finance, Tata Usaha (TU), Guru / Pendidik, Wali Kelas, Guru BK, Panitia PPDB, Orang Tua / Wali Murid, dan Siswa*.
+
+## Technologies Used
+
+- **Frontend**: **React 19**, **TypeScript**, **Vite 7**, **Tailwind CSS**, **Lucide React**, **Framer Motion**, **Zustand**, dan **TanStack Query (React Query)**.
+- **Backend Engine**: **Golang (Go 1.25)** dengan **Gin Gonic Web Framework** menerapkan pola **Clean Architecture** (*Handler $\rightarrow$ Usecase $\rightarrow$ Repository*).
+- **Database & ORM**: **PostgreSQL 15** dengan **GORM ORM Layer** dan indexing UUID.
+- **Autentikasi & Keamanan**: **JWT (HttpOnly Cookie)**, Bcrypt hashing, dan **HMAC-SHA256 Digital Signature**.
+- **Integrasi Pihak Ketiga**: **Midtrans Snap API Gateway** dan **Fonnte WhatsApp API Engine**.
+- **DevOps & Kontainerisasi**: **Docker Multi-Stage**, **Docker Compose**, dan **Nginx Reverse Proxy**.
+
+## Challenges and Learnings
+
+Tantangan teknis terbesar adalah merancang sistem rekonsiliasi transaksi pembayaran otomatis dari webhook payment gateway ke pencatatan Buku Kas Umum (BKU) ganda tanpa terjadi inkonsistensi saldo atau *double-entry race condition*. 
+
+Penerapan *database transactions* ACID pada PostgreSQL dan verifikasi signature kriptografis memastikan setiap mutasi kas tercatat dengan integritas 100% dan bebas dari manipulasi data.
+
+## Outcome
+
+Sistem SDIT-Keuangan berhasil diimplementasikan secara menyeluruh dengan pencapaian:
+- **Efisiensi Waktu 80%**: Memangkas waktu rekapitulasi kas bulanan dan penagihan SPP dari berhari-hari menjadi beberapa menit.
+- **Nol Kesalahan Rekonsiliasi**: Seluruh transaksi QRIS dan Virtual Account terhubung otomatis ke laporan arus kas sekolah.
+- **Transparansi Penuh**: Pimpinan yayasan dapat memantau kesehatan finansial lintas unit secara *real-time*, sementara orang tua santri mendapatkan kemudahan bertransaksi non-tunai langsung dari smartphone.

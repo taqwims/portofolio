@@ -1,0 +1,54 @@
+---
+title: "Ana Nahnu: Integrated Halal Certification Ecosystem & Ops Platform"
+publishedAt: "2024-07-10"
+summary: "Platform ekosistem digital terpadu untuk percepatan & otomasi siklus sertifikasi halal BPJPH, dynamic form wizard, kalkulasi biaya multi-parameter, invoicing QR code, payment gateway, dan manajemen operasional 15 role RBAC."
+images:
+  - "/images/projects/project-01/halalcore01.png"
+  - "/images/projects/project-01/halalcore.png"
+  - "/images/projects/project-01/halalcore02.png"
+team:
+  - name: "Muhammad Ahsani Taqwim"
+    role: "Fullstack Engineer"
+    avatar: "/images/avatar-taqwim.jpg"
+    linkedIn: "https://www.linkedin.com/in/mahsanitaqwim/"
+link: "https://halalcore.id/"
+---
+
+## Overview
+
+**Ana Nahnu** adalah platform ekosistem digital terpadu (*Integrated Halal Certification Ecosystem & Operational Management Platform*) yang dirancang khusus untuk mengelola, mempercepat, dan mengotomatisasi seluruh siklus pendampingan dan sertifikasi halal (jalur **Reguler** maupun **Self-Declare**) di Indonesia sesuai standar BPJPH (*Badan Penyelenggara Jaminan Produk Halal*) dan LPH (*Lembaga Pemeriksa Halal*).
+
+Platform ini menghubungkan berbagai pemangku kepentingan dalam satu ekosistem terintegrasi: Pelaku Usaha (Klien UMKM & Korporat), Telemarketing, Halal Advisor (Konsultan Pendamping), Drafter Dokumen SJPH, Tim Quality Control (QC), Halal Document Officer (HDO), Audit Manager, Tim Keuangan (Finance), Business Development (BizDev), hingga Eksekutif (Halal Director).
+
+## Key Features & System Modules
+
+- **Dynamic Submissions & Form Configurator**: Pengaturan kolom formulir dinamis multi-step wizard tanpa ubah kode sumber, mendukung upload berkas NIB, KTP, foto dapur/pabrik, manual SJPH, susunan tim halal, dan matriks bahan serta sistem revisi catatan dua arah.
+- **Dynamic Billing, Invoicing & Payment Gateway**: Kalkulator estimasi biaya instan multi-parameter (skala usaha, kategori produk, komponen wilayah), skema Down Payment (DP) atau Full Payment, serta integrasi Payment Gateway otomatis (**Midtrans** & **Mayar**).
+- **Invoicing & Digital Agreement Ber-QR Code**: Penerbitan invoice dan surat perjanjian kerja sama PDF otomatis dengan QR Code verifikasi keaslian terbuka (`/verify-invoice/:id` dan `/verify/agreement/:id/:token`).
+- **Operational Command Center & Workspaces**: Workspace khusus antrean Drafter, antrean Quality Control (QC), antrean Halal Document Officer (HDO), dan Audit Manager dengan *audit trail* lengkap serta sistem pengingat *idle submissions*.
+- **Multi-Tier Commission & Referral Engine**: Perhitungan komisi multi-tipe transparan (Direct Sales, Referral, dan Monthly Structural Override) dengan hirarki 3 tingkat (*Director $\rightarrow$ Halal Manager $\rightarrow$ Halal Advisor*).
+- **BizDev, SPH Generator & Expense Management**: Otomasi pembuatan Surat Penawaran Harga (SPH) korporat PDF, pencatatan biaya operasional, dan monitoring margin profit.
+- **Public Tracking & Halal CMS SEO**: Pelacakan progres pengajuan publik tanpa login (`/track`) serta CMS artikel edukasi halal dengan analitik skor SEO dan *server-side bot pre-rendering*.
+
+## Technologies Used
+
+- **Frontend**: **React 19**, **TypeScript**, **Vite**, **Tailwind CSS v4**, **Framer Motion**, **Zustand**, **React Hook Form**, **Zod**, **Recharts**, **Lucide React**, dan **Progressive Web App (PWA)**.
+- **Backend**: **Golang (Go 1.25)** dengan **Gin Gonic Web Framework** untuk RESTful API berkonsumsi memori rendah dan konkurensi tinggi.
+- **Database & Security**: **PostgreSQL** dengan **GORM ORM**, **JWT Authentication (`jwt/v5`)**, Bcrypt encryption, dan granular **Role-Based Access Control (15 Roles)**.
+- **Payment & Services**: **Midtrans SDK**, **Mayar API**, **FPDF** (PDF Generator), **Excelize** (Excel Exporter), dan **go-qrcode** (QR Code engine).
+- **DevOps & Infrastructure**: **Nginx Reverse Proxy**, **Docker Compose**, dan **Systemd Daemon Services**.
+
+## Challenges and Learnings
+
+Tantangan arsitektur terbesar adalah merancang sistem formulir pengajuan dinamis (*Dynamic Form Configurator*) yang fleksibel untuk ratusan kategori produk halal serta mengelola alur approval dokumen (*state machine workflow*) yang melibatkan 15 tingkatan hak akses pengguna. 
+
+Implementasi decoupled architecture antara backend Go berlatensi rendah dan frontend React 19 dengan validasi skema Zod berlapis berhasil menjamin keandalan data dan integritas berkas di setiap tahapan verifikasi.
+
+## Outcome
+
+Platform Ana Nahnu berhasil mendigitalisasi ratusan siklus sertifikasi halal, memangkas waktu drafting dan review dokumen hingga 60%, serta mengotomatisasi pencatatan invoicing dan komisi jaringan konsultan secara akurat dan transparan.
+
+## Live Website
+
+Kunjungi platform langsung di: [https://halalcore.id/](https://halalcore.id/)
+
