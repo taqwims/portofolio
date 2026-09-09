@@ -123,7 +123,7 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
+      <Projects range={[3]} />
       <Mailchimp />
     </Column>
   );
